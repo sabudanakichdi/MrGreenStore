@@ -1,0 +1,59 @@
+CREATE TABLE login_details (
+  india_id int(11) NOT NULL AUTO_INCREMENT,
+  username varchar(45) NOT NULL,
+  password varchar(45) NOT NULL,
+  admin varchar(10) NOT NULL,
+  PRIMARY KEY (india_id,username),
+  UNIQUE KEY username_UNIQUE (username)
+);
+
+INSERT INTO login_details VALUES (39,'Krishna','Ram','admin'),(40,'ohm','namo','admin'),(42,'Guru','guru','admin'),(45,'Vishnu','Ohm','admin');
+
+CREATE TABLE customers (
+  username varchar(100) NOT NULL,
+  password varchar(50) NOT NULL,
+  email varchar(150) NOT NULL,
+  contact varchar(50) NOT NULL,
+  zip varchar(10) NOT NULL,
+  address varchar(100) NOT NULL,
+  otp varchar(4),
+  customer_loyal varchar(25),
+  PRIMARY KEY (username),
+  UNIQUE KEY username_UNIQUE (username)
+);
+
+INSERT INTO customers VALUES ('prateek','admin','chauhanprateekcs@gmail.com','8108855572','401107','Mira Rd','5555','3'),('samson','root','samsondias837@gmail.com','7045464316','401107','Mira Rd','4444','2');
+
+CREATE TABLE products (
+  products_id int(11) NOT NULL AUTO_INCREMENT,
+  products_name varchar(45) NOT NULL,
+  category varchar(45) NOT NULL,
+  products_description varchar(445) NOT NULL,
+  products_price varchar(25) NOT NULL,
+  PRIMARY KEY (`products_id`)
+);
+
+INSERT INTO products VALUES (1,'Carrot','Vegetables','carrot.jsp','38'),(2,'Apple','Fruits','apple.jsp','10');
+
+
+CREATE TABLE coupons (
+  coupons_id int(11) NOT NULL AUTO_INCREMENT,
+  brand_name varchar(45) NOT NULL,
+  store_name varchar(45) NOT NULL,
+  brand_description varchar(445) NOT NULL,
+  brand_price varchar(45) NOT NULL,
+  PRIMARY KEY (`coupons_id`)
+);
+
+INSERT INTO coupons VALUES (1,'10% off On Apples','Fruits','N.A','As per Applicable'),(2,'10% off on Total Bill','All','N.A','As per Applicable');
+
+CREATE TABLE orders (
+  orders_id int(11) NOT NULL AUTO_INCREMENT,
+  orders_name varchar(45) NOT NULL,
+  store_name varchar(45) NOT NULL,
+  orders_description varchar(445) NOT NULL,
+  orders_price varchar(45) NOT NULL,
+  PRIMARY KEY (`orders_id`)
+); 
+
+INSERT INTO `orders` VALUES (1,'4 Apples','Fruits','N.A','40'),(2,'4 Carrot','Vegetables','N.A','152');
